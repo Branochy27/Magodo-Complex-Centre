@@ -12,64 +12,66 @@ const Landing = ({ onEnter }) => {
   }, []);
 
   return (
-    
+    <div className={`landing-page ${isVisible ? 'visible' : ''}`}>
       {/* Animated Background */}
+      <div className="landing-background">
+        <div className="bg-circle circle-1"></div>
+        <div className="bg-circle circle-2"></div>
+        <div className="bg-circle circle-3"></div>
+      </div>
       
-        
-    
+      <div className="landing-content">
         {/* Logo Section */}
-        
-          
-               
-        
+        <div className="landing-logo">
+          <div className="logo-badge">
+            <span className="logo-icon">🎓</span>
+          </div>
+        </div>
 
         {/* Main Content */}
+        <h1 className="landing-title">
+          {schoolInfo.name}
+        </h1>
         
-          
-            {schoolInfo.name}
-          
-          
-          
+        <div className="landing-motto">
+          <p className="motto-text">
             {schoolInfo.motto}
-            
-          
+          </p>
+          <div className="motto-underline"></div>
+        </div>
 
-          
-            {schoolInfo.vision}
-          
+        <p className="landing-vision">
+          {schoolInfo.vision}
+        </p>
 
-          {/* Stats Section */}
-          
-            
-              
-              Quality Education
-            
-            
-              
-              Expert Teachers
-            
-            
-              
-              Care & Support
-            
-          
+        {/* Stats Section */}
+        <div className="landing-stats">
+          <div className="stat-item">
+            <Award size={32} className="stat-icon" />
+            <span className="stat-label">Quality Education</span>
+          </div>
+          <div className="stat-item">
+            <Users size={32} className="stat-icon" />
+            <span className="stat-label">Expert Teachers</span>
+          </div>
+          <div className="stat-item">
+            <Heart size={32} className="stat-icon" />
+            <span className="stat-label">Care & Support</span>
+          </div>
+        </div>
 
-          {/* CTA Button */}
-          
-            Explore Our School
-            
-          
+        {/* CTA Button */}
+        <button className="landing-button" onClick={onEnter}>
+          Explore Our School
+          <ChevronDown size={20} className="button-icon" />
+        </button>
 
-          {/* Location Badge */}
-          
-            📍 {schoolInfo.contact.address.location}
-          
-        
-      
-
-    
-      
-    
+        {/* Location Badge */}
+        <div className="landing-location">
+          📍 {schoolInfo.contact.address.location}
+        </div>
+      </div>
+    </div>
   );
 };
 

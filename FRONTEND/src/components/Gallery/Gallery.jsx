@@ -63,30 +63,34 @@ const Gallery = () => {
   };
 
   return (
-    
-      
-        
-          
-          School Gallery
-          
+    <div className="gallery-section">
+      <div className="gallery-container">
+        <header className="gallery-header">
+          <h2 className="gallery-title">School Gallery</h2>
+          <p className="gallery-subtitle">
             Explore our campus, facilities, and vibrant school community
-          
-        
+          </p>
+        </header>
 
         {/* Upload Section */}
-        
-          
-            
+        <div className="upload-section">
+          <label className="upload-button">
+            <Upload size={24} />
             Upload Images
-            
-          
-          Click to upload school photos (JPG, PNG)
-        
+            <input
+              type="file"
+              multiple
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="hidden-input"
+            />
+          </label>
+          <p className="upload-hint">Click to upload school photos (JPG, PNG)</p>
+        </div>
 
         {/* Category Filter */}
-        
-          
-          
+        <div className="filter-section">
+          <div className="filter-buttons">
             {schoolInfo.gallery.categories.map(category => (
               <button
                 key={category}
@@ -94,72 +98,79 @@ const Gallery = () => {
                 onClick={() => setSelectedCategory(category)}
               >
                 {category}
-              
+              </button>
             ))}
-          
-        
+          </div>
+        </div>
 
         {/* Gallery Grid */}
         {filteredImages.length === 0 ? (
-          
-            
-              
-            
-            No Images Yet
-            Upload images to showcase your school's facilities, students, and activities.
-            
-              
-                🏫
-                Classrooms
-              
-              
-                👨‍🎓
-                Students
-              
-              
-                🎪
-                Events
-              
-              
-                🏃
-                Activities
-              
-            
-          
+          <div className="gallery-empty-state">
+            <div className="empty-icon">
+              <Image size={48} />
+            </div>
+            <h3>No Images Yet</h3>
+            <p>Upload images to showcase your school's facilities, students, and activities.</p>
+            <div className="example-categories">
+              <div className="example-item">
+                <span>🏫</span>
+                <p>Classrooms</p>
+              </div>
+              <div className="example-item">
+                <span>👨‍🎓</span>
+                <p>Students</p>
+              </div>
+              <div className="example-item">
+                <span>🎪</span>
+                <p>Events</p>
+              </div>
+              <div className="example-item">
+                <span>🏃</span>
+                <p>Activities</p>
+              </div>
+            </div>
+          </div>
         ) : (
-          
+          <div className="gallery-grid">
             {filteredImages.map((image, index) => (
               <div
                 key={image.id}
                 className="gallery-item"
                 onClick={() => openModal(image, index)}
               >
-                
-                
-                  {image.title}
-                  {image.category}
-                
-              
+                <img src={image.url} alt={image.title} />
+                <div className="image-overlay">
+                  <h4>{image.title}</h4>
+                  <p>{image.category}</p>
+                </div>
+              </div>
             ))}
-          
+          </div>
         )}
 
         {/* Image Count */}
         {filteredImages.length > 0 && (
-          
-            Showing {filteredImages.length} {filteredImages.length === 1 ? 'image' : 'images'}
-            {selectedCategory !== 'All' && ` in ${selectedCategory}`}
-          
+          <div className="image-counter">
+            <p>
+              Showing {filteredImages.length} {filteredImages.length === 1 ? 'image' : 'images'}
+              {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+            </p>
+          </div>
         )}
-      
+      </div>
 
       {/* Image Modal */}
       {selectedImage && (
-         0}
+        <ImageModal
+          image={selectedImage}
+          onClose={closeModal}
+          onPrevious={showPrevious}
+          onNext={showNext}
+          hasPrevious={selectedImageIndex > 0}
           hasNext={selectedImageIndex < filteredImages.length - 1}
         />
       )}
-    
+    </div>
   );
 };
 

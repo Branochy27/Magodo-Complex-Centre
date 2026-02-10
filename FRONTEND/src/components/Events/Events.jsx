@@ -1,6 +1,5 @@
 import React from 'react';
-import { Camera, Calendar, ImageIcon } from 'lucide-react';
-import EventCard from './EventCard';
+import { Camera, Calendar } from 'lucide-react';
 import { schoolInfo } from '../../data/schoolData';
 import './Events.css';
 
@@ -33,9 +32,27 @@ const Events = () => {
         </section>
       ) : (
         <section className="events-list">
-          {schoolInfo.events.map((event) => (
-            <EventCard key={event.id || event.title} event={event} />
-          ))}
+          <div className="events-grid">
+            {schoolInfo.events.map((event) => (
+              <article key={event.id || event.Title || event.title} className="event-card">
+                <div className="event-image">
+                  {event.image ? (
+                    <img src={event.image} alt={event.Title || event.title || 'Event image'} />
+                  ) : (
+                    <div className="event-placeholder">
+                      <span>📷</span>
+                      <p>No image</p>
+                    </div>
+                  )}
+                </div>
+                <div className="event-content">
+                  <div className="event-date"><Calendar size={16} /> {event.date || event.Date || ''}</div>
+                  <h3 className="event-title">{event.Title || event.title || 'Event'}</h3>
+                  <p className="event-description">{event.Description || event.description || ''}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       )}
     </div>

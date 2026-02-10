@@ -23,8 +23,8 @@ const Results = () => {
         </button>
 
         <button
-          className={`results-tab ${activeTab === 'kjsea' ? 'active' : ''}`}
-          onClick={() => setActiveTab('kjsea')}
+          className={`results-tab ${activeTab === 'kpsea' ? 'active' : ''}`}
+          onClick={() => setActiveTab('kpsea')}
         >
           KPSEA Results
         </button>
