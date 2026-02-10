@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Award, Users, BookOpen, Heart } from 'lucide-react';
+import { ChevronDown, Award, Users, Heart } from 'lucide-react';
 import { schoolInfo } from '../../data/schoolData';
 import './Landing.css';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { schoolInfo } from '../../data/schoolData';
 import './Events.css';
 

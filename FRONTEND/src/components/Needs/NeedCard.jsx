@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Users, BookOpen, Monitor, Heart, Utensils } from 'lucide-react';
+import { Building2, Users, BookOpen, Heart, Utensils } from 'lucide-react';
 
 const iconMap = {
   building: Building2,
