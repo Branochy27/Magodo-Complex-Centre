@@ -6,7 +6,7 @@ import './Needs.css';
 
 const Needs = () => {
   return (
-    <section className="needs-section">
+    <section id="needs" className="needs-section">
       <div className="needs-container">
         <h2 className="needs-title">Support Our School</h2>
         

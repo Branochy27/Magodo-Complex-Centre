@@ -7,7 +7,8 @@ const Results = () => {
   const [activeTab, setActiveTab] = useState('kcpe');
 
   return (
-    <div className="results-container">
+    <section id="results" className="results-section">
+      <div className="results-container">
       <header>
         <h2>Academic Excellence</h2>
         <p>Tracking our students' outstanding performance in national examinations</p>
@@ -64,7 +65,8 @@ const Results = () => {
           <li><TrendingUp /> Holistic Development — Nurturing academic and personal growth</li>
         </ul>
       </aside>
-    </div>
+      </div>
+    </section>
   );
 };
 

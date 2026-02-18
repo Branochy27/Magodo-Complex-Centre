@@ -61,7 +61,7 @@ const Landing = ({ onEnter }) => {
         </div>
 
         {/* CTA Button */}
-        <button className="landing-button" onClick={onEnter}>
+        <button type="button" className="landing-button" onClick={onEnter} aria-label="Explore our school">
           Explore Our School
           <ChevronDown size={20} className="button-icon" />
         </button>
