@@ -1,6 +1,7 @@
 .events-section {
   padding: 4rem 1rem;
   background-color: white;
+  scroll-margin-top: 80px; /* ensure anchored scrolls don't hide under sticky navbar */
 }
 
 .events-container {

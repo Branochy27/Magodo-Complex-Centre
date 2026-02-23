@@ -5,7 +5,8 @@ import './Events.css';
 
 const Events = () => {
   return (
-    <div className="events-container">
+    <section id="events" className="events-section">
+      <div className="events-container">
       <header>
         <h2>School Events &amp; Activities</h2>
         <p>Celebrating our students' achievements and memorable moments</p>
@@ -55,7 +56,8 @@ const Events = () => {
           </div>
         </section>
       )}
-    </div>
+      </div>
+    </section>
   );
 };
 

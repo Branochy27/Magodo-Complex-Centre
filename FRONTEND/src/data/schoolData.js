@@ -82,7 +82,7 @@ export const schoolInfo = {
   },
 
   gallery : {
-    categories : ['All', 'Sports', 'Competitions', 'Activities', 'Events', 'Classrooms', 'Students'],
+    categories : ['All', 'Sports', 'Competitions', 'Activities', 'Events', 'Classrooms', 'Students', 'Facilities'],
     images : [
  // Images will be added here
       { id: 1, 
@@ -100,7 +100,7 @@ export const schoolInfo = {
       id:1 ,
       Title : "Admission for January Intake",
       Description: "We are excited to announce that admissions for the January intake are now open! Enroll your children" ,
-      image: "/image/january intake.jpg"      
+      image: "/images/admission-flyer-optimized.jpg"      
     }
   ],
 
