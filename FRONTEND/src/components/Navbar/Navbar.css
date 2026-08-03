@@ -33,6 +33,7 @@
 @media (min-width: 768px) {
   .navbar-menu-desktop {
     display: flex;
+    align-items: center;
   }
 }
 
@@ -43,6 +44,9 @@
   cursor: pointer;
   font-size: 1rem;
   transition: color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -87,6 +91,9 @@
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
+  text-decoration: none;
+  display: block;
+  box-sizing: border-box;
 }
 
 .mobile-nav-link:hover {

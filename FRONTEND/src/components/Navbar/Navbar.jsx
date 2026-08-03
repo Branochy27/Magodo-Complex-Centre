@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { scrollToSection } from '../../utils/scrollToSection';
 import { schoolInfo } from '../../data/schoolData';
 import './Navbar.css';

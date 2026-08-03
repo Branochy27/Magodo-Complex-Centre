@@ -6,7 +6,8 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
 const errorHandler = require('./middleware/errorHandler');
-
+const authRoutes = require("./routes/authRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 
 // Connect to MongoDB
@@ -20,6 +21,8 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true
 }));
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,6 +39,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/contacts', contactRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Error Handler Middleware (should be last)
 app.use(errorHandler);
